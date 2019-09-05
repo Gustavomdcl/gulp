@@ -1,0 +1,15 @@
+//TEMPLATE
+
+.internal {
+	.capa {
+		padding-bottom: 48px;
+	}
+	&>.container {
+		&:first-child {
+			padding-top: 48px;
+		}
+		&:last-child {
+			padding-bottom: 48px;
+		}
+	}
+}

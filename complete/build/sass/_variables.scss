@@ -1,0 +1,89 @@
+// FONT
+
+	$font-size: 14;
+	$font-family: 'Roboto', 'Arial', sans-serif;
+
+// COLORS
+
+	//BASE
+
+		$color-white:					#FFFFFF;
+		$color-black:					#000000;
+
+	//BACKGROUND COLORS
+
+		$color-light-gray:				#E9EBEE; $color-light-gray-opacity:	rgba(233, 235, 238, 0);
+		$color-detail-gray:				rgba(234,234,234,0.6);
+		$color-solid-gray:				#E9E9E9;
+
+	//TEXT COLOR
+
+		$color-text-black:				rgba(0,0,0,0.70);
+		$color-text-white:				#FFFFFF;
+		$color-text-blue:				#1F80E1;
+		$color-text-placeholder:		rgba(0,0,0,0.30);
+		$color-text-black2:				#000000;
+
+	//GRADIENTS
+
+		//GRAD VIOLET
+			$color-grad-violetA:		#5B2B82;
+			$color-grad-violetB:		#B51783;
+
+		//GRAD BLUE
+			$color-grad-blueA:			#3434BF;
+			$color-grad-blueB:			#0AC3F2;
+
+		//GRAD GREEN
+			$color-grad-greenA:			#0AC3F2;
+			$color-grad-greenB:			#DBE831;
+
+		//GRAD BLUE2
+			$color-grad-blue2A:			#14F1D9;
+			$color-grad-blue2B:			#3672F8;
+
+		//GRAD TOP DIALOG
+			$color-grad-top-dialogA:	#1F80E1;
+			$color-grad-top-dialogB:	#19D0DE;
+
+	//INIT
+
+		$color-text: $color-text-black;
+		$color-background: $color-white;
+
+// LAYOUT
+
+	$container-max-width:	720px;
+	$column_number:			12;
+	$column_padding:		0px 8px;
+	$column_width:			percentage(1/$column_number);
+
+// LINE BREAKS
+
+	//GRID
+
+		//SMALL
+			$small:			540px;
+			$sm:			576px;
+		//MEDIUM
+			$medium:		720px;
+			$md:			768px;
+		//LARGE
+			$large:			960px;
+			$lg:			992px;
+		//EXTRA LARGE
+			$extra-large:	1140px;
+			$xl:			1200px;
+
+	//INIT
+
+		$mobile-portrait: 320px;
+		$mobile-landscape: 480px;
+		$tablet-portrait: 768px;
+		$tablet-landscape: 1024px;
+
+		$broken: $container-max-width;
+
+// ANIMATION
+
+	$animation: 0.5s;

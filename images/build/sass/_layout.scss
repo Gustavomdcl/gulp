@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+div[class*=col] {
+  @include box-sizing(border-box);
+  position: relative;
+  //display: inline-block;
+  width: 100%;
+  min-height: 1px;
+  padding: $column_padding;
+}
+
+@for $i from 1 through $column_number {
+  div.col#{$i} { //.col1 .col6
+    width: $i * $column_width;
+  }
+}
+@include grid($sm,$small,'sm');
+@include grid($md,$medium,'md');
+@include grid($lg,$large,'lg');
+@include grid($xl,$extra-large,'xl');

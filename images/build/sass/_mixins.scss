@@ -1,0 +1,210 @@
+@mixin responsivo($type, $query) {
+  @media($type: $query) {
+    @content;
+  }
+}
+
+@mixin grid($screen,$width,$size){
+  @media (min-width: $screen) {// screen >= $screen
+    // .container {
+    //     max-width: $width;
+    // }
+    @for $i from 1 through $column_number {
+      .col-#{$size}-#{$i} {
+          max-width: $i * $column_width;
+      }
+    }
+  }
+}
+
+@mixin line-shadow-down($color) {
+  -moz-box-shadow: 0px 1px 0px $color;
+  -webkit-box-shadow: 0px 1px 0px $color;
+  box-shadow: 0px 1px 0px $color;
+}
+
+@mixin no-shadow {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($seconds, $type) {
+  transition:All $seconds $type;
+  -webkit-transition:All $seconds $type;
+  -moz-transition:All $seconds $type;
+  -o-transition:All $seconds $type;
+}
+
+@mixin font-size($size) {
+  font-size: ($size/$font-size)+em;
+}
+
+@mixin gradient-background($color-start, $color-end) {
+  //@include gradient-background();
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100 */
+  background: $color-start; /* Old browsers */
+  background: -moz-linear-gradient(45deg, $color-start 0%, $color-end 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, $color-start 0%,$color-end 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, $color-start 0%,$color-end 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-start', endColorstr='$color-end',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin gradient {
+  @include gradient-background($color-grad-violetA, $color-grad-violetB);
+  .violet & {
+    @include gradient-background($color-grad-violetA, $color-grad-violetB);
+  }
+  .blue & {
+    @include gradient-background($color-grad-blueA, $color-grad-blueB);
+  }
+  .green & {
+    @include gradient-background($color-grad-greenA, $color-grad-greenB);
+  }
+  .blue2 & {
+    @include gradient-background($color-grad-blue2A, $color-grad-blue2B);
+  }
+  .top-dialog & {
+    @include gradient-background($color-grad-top-dialogA, $color-grad-top-dialogB);
+  }
+}
+
+@mixin color {
+  color: $color-grad-violetA;
+  .violet & {
+    color: $color-grad-violetA;
+  }
+  .blue & {
+    color: $color-grad-blueA;
+  }
+  .green & {
+    color: $color-grad-greenA;
+  }
+  .blue2 & {
+    color: $color-grad-blue2A;
+  }
+  .top-dialog & {
+    color: $color-grad-top-dialogA;
+  }
+}
+
+  @mixin colorB {
+    color: $color-grad-violetB;
+    .violet & {
+      color: $color-grad-violetB;
+    }
+    .blue & {
+      color: $color-grad-blueB;
+    }
+    .green & {
+      color: $color-grad-greenB;
+    }
+    .blue2 & {
+      color: $color-grad-blue2B;
+    }
+    .top-dialog & {
+      color: $color-grad-top-dialogB;
+    }
+  }
+
+@mixin stop-color {
+  stop-color: $color-grad-violetA;
+  .violet & {
+    stop-color: $color-grad-violetA;
+  }
+  .blue & {
+    stop-color: $color-grad-blueA;
+  }
+  .green & {
+    stop-color: $color-grad-greenA;
+  }
+  .blue2 & {
+    stop-color: $color-grad-blue2A;
+  }
+  .top-dialog & {
+    stop-color: $color-grad-top-dialogA;
+  }
+}
+
+  @mixin stop-colorB {
+    stop-color: $color-grad-violetB;
+    .violet & {
+      stop-color: $color-grad-violetB;
+    }
+    .blue & {
+      stop-color: $color-grad-blueB;
+    }
+    .green & {
+      stop-color: $color-grad-greenB;
+    }
+    .blue2 & {
+      stop-color: $color-grad-blue2B;
+    }
+    .top-dialog & {
+      stop-color: $color-grad-top-dialogB;
+    }
+  }
+
+@mixin background {
+  background-color: $color-grad-violetA;
+  .violet & {
+    background-color: $color-grad-violetA;
+  }
+  .blue & {
+    background-color: $color-grad-blueA;
+  }
+  .green & {
+    background-color: $color-grad-greenA;
+  }
+  .blue2 & {
+    background-color: $color-grad-blue2A;
+  }
+  .top-dialog & {
+    background-color: $color-grad-top-dialogA;
+  }
+}
+
+  @mixin backgroundB {
+    background-color: $color-grad-violetB;
+    .violet & {
+      background-color: $color-grad-violetB;
+    }
+    .blue & {
+      background-color: $color-grad-blueB;
+    }
+    .green & {
+      background-color: $color-grad-greenB;
+    }
+    .blue2 & {
+      background-color: $color-grad-blue2B;
+    }
+    .top-dialog & {
+      background-color: $color-grad-top-dialogB;
+    }
+  }
+
+@mixin border($size,$type) {
+  border: $size+px $type $color-grad-violetA;
+  .violet & {
+    border: $size+px $type $color-grad-violetA;
+  }
+  .blue & {
+    border: $size+px $type $color-grad-blueA;
+  }
+  .green & {
+    border: $size+px $type $color-grad-greenA;
+  }
+  .blue2 & {
+    border: $size+px $type $color-grad-blue2A;
+  }
+  .top-dialog & {
+    border: $size+px $type $color-grad-top-dialogA;
+  }
+}
+  
