@@ -2,7 +2,10 @@ const { watch, src, dest } = require('gulp');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const compass = require( 'gulp-for-compass' );
-const imageOptim = require('gulp-imageoptim');
+
+const imagemin = require('gulp-imagemin');
+
+const image = require('gulp-image');
 
 function javascript(cb) {
 
@@ -31,7 +34,7 @@ function css(cb) {
   cb();
 }
 
-function image(cb) {
+function img(cb) {
 
   // return src('../build/img/**/*')
   // .pipe(compass({
@@ -48,9 +51,42 @@ function image(cb) {
   // }))
   // .pipe(dest('../assets/img'));
 
-  return src('../build/img/**/*')
-  .pipe(imageOptim.optimize())
-  .pipe(dest('../assets/img'));
+  // return src('../build/img/**/*')
+  // .pipe(imageOptim.optimize())
+  // .pipe(dest('../assets/img'));
+
+  //CERTO =====
+              // return src('../build/img/**/*')
+              // .pipe(imagemin([
+              //     imagemin.gifsicle({interlaced: true}),
+              //     imagemin.jpegtran({progressive: true}),
+              //     imagemin.optipng({optimizationLevel: 5}),
+              //     imagemin.svgo({
+              //         plugins: [
+              //             {removeViewBox: true},
+              //             {cleanupIDs: false}
+              //         ]
+              //     })
+              // ]))
+              // .pipe(dest('../assets/img'));
+
+
+
+              src('../build/img/**/*')
+              .pipe(image({
+                pngquant: true,
+                optipng: false,
+                zopflipng: true,
+                jpegRecompress: false,
+                jpegoptim: true,
+                mozjpeg: true,
+                gifsicle: true,
+                svgo: true,
+                concurrent: 10
+              }))
+              .pipe(dest('../assets/img'));
+
+
 
   // body omitted
   cb();
@@ -59,7 +95,7 @@ function image(cb) {
 exports.default = function() {
 	watch('../build/js/**/*.js', javascript);
   watch('../build/sass/**/*.scss', css);
-  watch('../build/img/**/*', image);
+  watch('../build/img/**/*', img);
 }
 
 

@@ -9,7 +9,8 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-for-compass": "0.0.2",
-    "gulp-imageoptim": "^1.0.9",
+    "gulp-image": "^5.1.0",
+    "gulp-imagemin": "^6.1.0",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.2"
   },

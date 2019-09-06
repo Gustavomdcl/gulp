@@ -1,0 +1,30 @@
+//LOADING =====
+
+.loading {
+	position: fixed;
+	@include gradient;
+	z-index: 100000;
+	width: 100%;
+	height: 100%;
+	p {
+		@include font-size(20);
+		font-weight: 300;
+		position: absolute;
+		color: $color-white;
+		text-align: center;
+		width: 100%;
+		top: 50%;
+		margin-top: 50px;
+		&:before {
+			display: block;
+			content: '';
+			width: 50px;
+			height: 50px;
+			background-image: url(../img/template/load.gif);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			margin: -60px auto 20px auto;
+		}
+	}
+}
