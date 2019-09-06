@@ -11,7 +11,7 @@ gulp.task('default', function(done){
     .pipe(iconfont({
       fontName: 'myfont',
       prependUnicode: true,
-      formats: ['ttf', 'eot', 'woff'],
+      formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
       timestamp: runTimestamp,
     }));
 
@@ -45,6 +45,20 @@ gulp.task('default', function(done){
     }
   ], done);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // gulp.task('default', function(){
 //   return gulp.src(['../build/icons/**/*.svg'])
